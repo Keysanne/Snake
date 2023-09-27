@@ -1,36 +1,11 @@
 #include "main.hpp"
 #include "Class.hpp"
-#include <cwchar>
-#include <string>
-
-void	get_users(Users &User)
-{
-	std::ifstream	stock(".stock");
-	std::string		recup;
-	std::string		swp;
-	int				i;
-	Info	tmp;
-
-	while(getline(stock, recup))
-	{
-		swp = "";
-		for(i = 0;recup[i] != '|';i++)
-			swp += recup[i];
-		tmp.setUsername(swp);
-		swp = "";
-		while (recup[++i])
-			swp += recup[i];
-		tmp.setPassword(swp);
-		User.list.push_back(tmp);
-	}
-}
 
 int	main()
 {
 	Users	User;
 	std::string first_answer;
 
-	get_users(User);
 	while (true)
 	{
 		system("clear");

@@ -1,6 +1,6 @@
 NAME= login_screen
 COMP= c++
-FLAGS= -Wall -Wextra -Werror
+FLAGS= -Wall -Wextra -Werror -lcrypt
 INCLUDESDIR = includes/
 SRCS= $(shell find srcs/ -name '*.cpp')
 

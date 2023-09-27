@@ -1,10 +1,9 @@
 #include "Class.hpp"
 #include "main.hpp"
-#include <string>
 
 void	already_used(std::string username, Users User)
 {
-	std::ifstream	stock(".stock");
+	std::ifstream	stock(".stock.csv");
 	std::string		recup;
 
 	while(getline(stock, recup))
@@ -26,8 +25,8 @@ void	already_used(std::string username, Users User)
 
 void	stock_user(Info tmp)
 {
-	std::ofstream	stock(".stock",std::ios::app);
-	stock << tmp.getUsername() << "|" << tmp.getPassword() << std::endl;
+	std::ofstream	stock(".stock.csv",std::ios::app);
+	stock << tmp.getUsername() << " " << crypt(tmp.getPassword().c_str(), "tb") << std::endl;
 }
 
 void	subscribe_fct(Users &User)
@@ -39,13 +38,12 @@ void	subscribe_fct(Users &User)
 	std::cout << "What will be your username ?" << std::endl;
 	std::cout << "Username: ";
 	std::cin >> username;
-	already_used(username, User);   /*verif si le login n'est pas deja utilise*/
+	already_used(username, User);
 	tmp.setUsername(username);
 	std::cout << "What will be your password ?" << std::endl;
 	std::cout << "Password: ";
-	std::cin >> password;
+	hide_password(password);
 	tmp.setPassword(password);
-	User.list.push_back(tmp);
 	stock_user(tmp);
 	system("clear");
 	aff();

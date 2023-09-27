@@ -1,5 +1,4 @@
 #include "Class.hpp"
-#include <new>
 /*----------------------USERS--------------------*/
 Users::Users() {}
 Users::~Users() {}
