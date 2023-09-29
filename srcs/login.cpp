@@ -39,7 +39,7 @@ void	login_fct(Users &User)
 	if (verif(username, password.c_str(), User) == 0)
 	{
 		std::cout << "Welcome " << username << ", have fun playing Snake." << std::endl;
-		exit(0);
+		exit(0); /*Handle the game and refresh the highscore*/
 	}
 	std::cout << "Unknown Username/Password" << std::endl;
 	sleep(1);
