@@ -26,7 +26,7 @@ void	already_used(std::string username, Users User)
 void	stock_user(Info tmp)
 {
 	std::ofstream	stock(".stock.csv",std::ios::app);
-	stock << tmp.getUsername() << " " << crypt(tmp.getPassword().c_str(), "tb") << std::endl;
+	stock << tmp.getUsername() << " " << crypt(tmp.getPassword().c_str(), "tb") << " " << tmp.getScore() << std::endl;
 }
 
 void	subscribe_fct(Users &User)
@@ -44,6 +44,7 @@ void	subscribe_fct(Users &User)
 	std::cout << "Password: ";
 	hide_password(password);
 	tmp.setPassword(password);
+	tmp.setScore(0);
 	stock_user(tmp);
 	system("clear");
 	aff();

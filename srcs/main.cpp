@@ -5,7 +5,6 @@ int	main()
 {
 	Users	User;
 	std::string first_answer;
-
 	while (true)
 	{
 		system("clear");

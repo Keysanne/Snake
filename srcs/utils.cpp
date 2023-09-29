@@ -39,9 +39,10 @@ Users	get_users()
 			swp += recup[i];
 		tmp.setUsername(swp);
 		swp = "";
-		while (recup[++i])
+		while (recup[++i] != ' ')
 			swp += recup[i];
 		tmp.setPassword(swp);
+		tmp.setScore(std::atoi(&recup[i]));
 		final.list.push_back(tmp);
 	}
 	return final;
