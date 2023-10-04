@@ -26,6 +26,20 @@ int	verif(std::string username, const char *password, Users &User)
 	return 1;
 }
 
+void	launch(std::string username)
+{
+	int size, speed;
+
+	std::cout << "Welcome " << username << std::endl;
+	std::cout << "Which size do you want for the map ?";
+	std::cin >> size;
+	std::cout << "Which speed do you want ?";
+	std::cin >> speed;
+	std::cout << "Have fun playing Snake." << std::endl;
+	core(size, speed);
+	// recup le score
+}
+
 void	login_fct(Users &User)
 {
 	std::string username;
@@ -38,8 +52,8 @@ void	login_fct(Users &User)
 	User = get_users();
 	if (verif(username, password.c_str(), User) == 0)
 	{
-		std::cout << "Welcome " << username << ", have fun playing Snake." << std::endl;
-		exit(0); /*Handle the game and refresh the highscore*/
+		launch(username);
+		exit(0);
 	}
 	std::cout << "Unknown Username/Password" << std::endl;
 	sleep(1);

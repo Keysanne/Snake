@@ -16,6 +16,8 @@ void	aff();
 void	subscribe_fct(Users &users);
 void	login_fct(Users &users);
 void	hide_password(std::string &password);
+int core(int size, int speed);
 Users	get_users();
+
 
 #endif

@@ -1,6 +1,6 @@
-NAME= login_screen
+NAME= Snek
 COMP= c++
-FLAGS= -Wall -Wextra -Werror -lcrypt
+FLAGS= -lcrypt -lncurses -lpthread
 INCLUDESDIR = includes/
 SRCS= $(shell find srcs/ -name '*.cpp')
 
