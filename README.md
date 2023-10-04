@@ -1,4 +1,4 @@
-# login_screen
+# Snek
 
 this project is about create a login screen in C++ for the Snake game who will be the next step:
 
